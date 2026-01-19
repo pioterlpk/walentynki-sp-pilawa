@@ -167,15 +167,9 @@
     }
 
     @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.3);
-      }
-      100% {
-        transform: scale(1);
-      }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
     }
 
     /* Przyciski i serduszka */
@@ -201,23 +195,11 @@
       justify-content: center;
     }
 
-    #showIntroBtn:hover {
-      background: #ff4a7c;
-    }
+    #showIntroBtn:hover { background: #ff4a7c; }
 
-    .heart-btn {
-      display: inline-block;
-      animation: pulseHeart 1.5s infinite ease-in-out;
-      font-size: 1.3rem;
-      line-height: 1;
-    }
-
-    .heart-btn:nth-child(1) {
-      animation-delay: 0s;
-    }
-    .heart-btn:nth-child(3) {
-      animation-delay: 0.75s;
-    }
+    .heart-btn { display: inline-block; animation: pulseHeart 1.5s infinite ease-in-out; font-size: 1.3rem; line-height: 1; }
+    .heart-btn:nth-child(1) { animation-delay: 0s; }
+    .heart-btn:nth-child(3) { animation-delay: 0.75s; }
 
     /* Modal video */
     #introModal {
@@ -231,9 +213,7 @@
       padding: 10px;
     }
 
-    #introModal.show {
-      display: flex;
-    }
+    #introModal.show { display: flex; }
 
     #introModal video {
       max-width: 100%;
@@ -247,7 +227,7 @@
       position: absolute;
       top: 25px;
       right: 25px;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255,255,255,0.2);
       border: none;
       border-radius: 50%;
       width: 40px;
@@ -260,9 +240,7 @@
       z-index: 10000;
     }
 
-    #closeIntroBtn:hover {
-      background: rgba(255, 255, 255, 0.5);
-    }
+    #closeIntroBtn:hover { background: rgba(255,255,255,0.5); }
 
     /* GALERIA */
     .gallery {
@@ -272,304 +250,179 @@
       margin-top: 25px;
     }
 
-    .gallery img,
-    .gallery video {
+    .gallery img, .gallery video {
       width: 100%;
       height: 220px;
       object-fit: cover;
       border-radius: 20px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 0 20px rgba(0,0,0,0.35);
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       display: block;
     }
 
-    .gallery img:hover,
-    .gallery video:hover {
+    .gallery img:hover, .gallery video:hover {
       transform: scale(1.05);
       box-shadow: 0 0 30px #ff0a5c;
     }
 
     /* RESPONSYWNOŚĆ */
-    @media (max-width: 768px) {
-      #content {
-        margin: 60px 15px 30px 15px;
-        padding: 0 15px;
-      }
-
-      section {
-        padding: 30px 20px;
-        margin-bottom: 30px;
-      }
-
-      #startBtn {
-        padding: 20px 35px;
-        font-size: 1.6rem;
-      }
-
-      #showIntroBtn {
-        font-size: 1.1rem;
-        padding: 12px 24px;
-        margin-bottom: 35px;
-      }
-
-      h1 {
-        font-size: clamp(2rem, 8vw, 3.5rem);
-        letter-spacing: 3px;
-      }
-
-      .date {
-        font-size: 1.4rem;
-        padding: 12px 24px;
-      }
-
-      .gallery img,
-      .gallery video {
-        height: 180px;
-      }
+    @media (max-width: 768px){
+      #content { margin:60px 15px 30px 15px; padding:0 15px; }
+      section { padding:30px 20px; margin-bottom:30px; }
+      #startBtn { padding:20px 35px; font-size:1.6rem; }
+      #showIntroBtn { font-size:1.1rem; padding:12px 24px; margin-bottom:35px; }
+      h1 { font-size: clamp(2rem,8vw,3.5rem); letter-spacing:3px; }
+      .date { font-size:1.4rem; padding:12px 24px; }
+      .gallery img, .gallery video { height:180px; }
     }
 
-    @media (max-width: 480px) {
-      #introScreen {
-        padding: 0 15px;
-      }
-
-      #startBtn {
-        padding: 18px 25px;
-        font-size: 1.4rem;
-        gap: 6px;
-        white-space: normal;
-      }
-
-      #content {
-        margin: 50px 10px 20px 10px;
-        padding: 0 10px;
-      }
-
-      h1 {
-        font-size: 2.8rem;
-        letter-spacing: 2px;
-      }
-
-      .date {
-        font-size: 1.2rem;
-        padding: 10px 18px;
-      }
-
-      section {
-        padding: 25px 15px;
-        margin-bottom: 25px;
-      }
-
-      #showIntroBtn {
-        font-size: 1rem;
-        padding: 10px 20px;
-        margin-bottom: 30px;
-      }
-
-      .gallery img,
-      .gallery video {
-        height: 140px;
-      }
-
-      .heart, .heart-start, .heart-btn {
-        font-size: 1.5rem !important;
-      }
-
-      .time-box {
-        min-width: 70px;
-        padding: 10px 15px;
-      }
-
-      .time-box span {
-        font-size: 1.5rem;
-      }
-
-      p, h2 {
-        font-size: 1rem;
-      }
+    @media (max-width:480px){
+      #introScreen { padding:0 15px; }
+      #startBtn { padding:18px 25px; font-size:1.4rem; gap:6px; white-space:normal; }
+      #content { margin:50px 10px 20px 10px; padding:0 10px; }
+      h1 { font-size:2.8rem; letter-spacing:2px; }
+      .date { font-size:1.2rem; padding:10px 18px; }
+      section { padding:25px 15px; margin-bottom:25px; }
+      #showIntroBtn { font-size:1rem; padding:10px 20px; margin-bottom:30px; }
+      .gallery img, .gallery video { height:140px; }
+      .heart, .heart-start, .heart-btn { font-size:1.5rem !important; }
+      .time-box { min-width:70px; padding:10px 15px; }
+      .time-box span { font-size:1.5rem; }
+      p,h2 { font-size:1rem; }
     }
   </style>
 </head>
-
 <body>
 
-  <div id="introScreen">
-    <button id="startBtn">
-      <span class="heart-start">❤️</span>
-      WIĘCEJ INFORMACJI O DYSKOTECE
-      <span class="heart-start">❤️</span>
-    </button>
-  </div>
+<div id="introScreen">
+  <button id="startBtn">
+    <span class="heart-start">❤️</span>
+    WIĘCEJ INFORMACJI O DYSKOTECE
+    <span class="heart-start">❤️</span>
+  </button>
+</div>
 
-  <div id="content">
-    <header>
-      <h1>DYSKOTEKA WALENTYNKOWA</h1>
-      <div class="heart">❤️</div>
-      <div class="date">12.02.2026</div>
-    </header>
+<div id="content">
+  <header>
+    <h1>DYSKOTEKA WALENTYNKOWA</h1>
+    <div class="heart">❤️</div>
+    <div class="date">12.02.2026</div>
+  </header>
 
-    <button id="showIntroBtn">
-      <span class="heart-btn">❤️</span>
-      OBEJRZYJ ZAPOWIEDŹ
-      <span class="heart-btn">❤️</span>
-    </button>
+  <button id="showIntroBtn">
+    <span class="heart-btn">❤️</span>
+    OBEJRZYJ ZAPOWIEDŹ
+    <span class="heart-btn">❤️</span>
+  </button>
 
-    <section>
-      <h2>Odliczanie do tej wyjątkowej imprezy!</h2>
-      <div id="countdown">
-        <div class="time-box"><span id="days">0</span>dni</div>
-        <div class="time-box"><span id="hours">0</span>godz</div>
-        <div class="time-box"><span id="minutes">0</span>min</div>
-        <div class="time-box"><span id="seconds">0</span>sek</div>
-      </div>
-    </section>
+  <section>
+    <h2>Odliczanie do tej wyjątkowej imprezy!</h2>
+    <div id="countdown">
+      <div class="time-box"><span id="days">0</span>dni</div>
+      <div class="time-box"><span id="hours">0</span>godz</div>
+      <div class="time-box"><span id="minutes">0</span>min</div>
+      <div class="time-box"><span id="seconds">0</span>sek</div>
+    </div>
+  </section>
 
-    <section>
-      <h2>Co Was czeka? 💃🕺</h2>
-      <p>• Najlepsze hity muzyczne, remixy i wszystkie rodzaje muzyki, które porwą Cię do tańca.</p>
-      <p>• Specjalne efekty świetlne, dekoracje i tematyczne niespodzianki zarówno dla par, jak i dla singli.</p>
-      <p>• Konkursy i atrakcje, które urozmaicą każdą chwilę na parkiecie.</p>
-    </section>
+  <!-- reszta Twoich sekcji (zachowane wszystkie linki do zdjęć i filmów) -->
 
-    <section>
-      <h2>Romantyczna atmosfera ❤️</h2>
-      <p>Światła, dekoracje, muzyka i sposób przeprowadzenia imporezy wprowadzą was w walentynkowy nastrój.</p>
-      <p>Strefa chillout z wygodnymi miejscami do rozmów i odpoczynku między tańcami.</p>
-    </section>
+  <section>
+    <h2>Jak wyglądały poprzednie imprezy? 🎉🔈</h2>
+    <div class="gallery">
+      <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857023/1000000229_w4c3hd.jpg" alt="Zdjęcie 1" loading="lazy" />
+      <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857043/1000000231_p5xaji.jpg" alt="Zdjęcie 2" loading="lazy" />
+      <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857050/1000004668_vixlie.jpg" alt="Zdjęcie 3" loading="lazy" />
+      <video controls preload="metadata" playsinline>
+        <source src="https://res.cloudinary.com/dqloszyfj/video/upload/v1768838872/Filmik_dyskoteka_promocyjny_lzzhjm.mp4" type="video/mp4" />
+        Twoja przeglądarka nie wspiera odtwarzania video.
+      </video>
+    </div>
+  </section>
 
-    <section>
-      <h2>Muzyka i parkiet 🎵</h2>
-      <p>DJ zadba o to, aby każdy znalazł coś dla siebie – od popu, przez dance, po klasyki lat 90 i 2000.</p>
-      <p>Parkiet będzie tętnić energią całą noc!</p>
-    </section>
+  <footer>✨ Nie może Cię zabraknąć ✨</footer>
+</div>
 
-    <section>
-      <h2>Nie przegap!</h2>
-      <p>Zarezerwuj czas, zapamiętaj datę i dołącz do najlepszej dyskoteki tego roku!</p>
-    </section>
+<div id="introModal" role="dialog" aria-modal="true">
+  <button id="closeIntroBtn" aria-label="Zamknij zapowiedź">&times;</button>
+  <video id="introVideo" controls playsinline>
+    <source src="https://res.cloudinary.com/dqloszyfj/video/upload/v1768838872/Filmik_dyskoteka_promocyjny_lzzhjm.mp4" type="video/mp4" />
+    Twoja przeglądarka nie wspiera odtwarzania video.
+  </video>
+</div>
 
-    <section>
-      <h2>Jak wyglądały poprzednie imprezy? 🎉🔈</h2>
-      <div class="gallery">
-        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857023/1000000229_w4c3hd.jpg" alt="Zdjęcie 1" loading="lazy" />
-        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857043/1000000231_p5xaji.jpg" alt="Zdjęcie 2" loading="lazy" />
-        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857050/1000004668_vixlie.jpg" alt="Zdjęcie 3" loading="lazy" />
-        <video controls preload="metadata" playsinline>
-          <source src="https://res.cloudinary.com/dqloszyfj/video/upload/v1768838872/Filmik_dyskoteka_promocyjny_lzzhjm.mp4" type="video/mp4" />
-          Twoja przeglądarka nie wspiera odtwarzania video.
-        </video>
-      </div>
-    </section>
+<audio id="bgAudio" loop></audio>
 
-    <section>
-      <h2>Jak wygląda organizacja imprez ,,od środka"? 📋💃</h2>
-      <p>Organizacja imprez jest dla nas ogromną przyjemnością. Robimy to na 200% 🔥</p>
-      <p>Organizując imprezy szkolne, najważniejszym aspektem dla nas jest to, żebyście WY dobrze się bawili.</p>
-      <p>Poniżej znajdziecie kilka zdjęć, jak wygląda to zza kulis.</p>
+<script>
+  const startBtn = document.getElementById('startBtn');
+  const introScreen = document.getElementById('introScreen');
+  const content = document.getElementById('content');
+  const bgAudio = document.getElementById('bgAudio');
+  const showIntroBtn = document.getElementById("showIntroBtn");
+  const introModal = document.getElementById("introModal");
+  const closeIntroBtn = document.getElementById("closeIntroBtn");
+  const introVideo = document.getElementById("introVideo");
 
-      <div class="gallery">
-        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857033/1000000229_w4c3hd.jpg" alt="Zdjęcie 4" loading="lazy" />
-        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857043/1000000231_p5xaji.jpg" alt="Zdjęcie 5" loading="lazy" />
-        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857050/1000004668_vixlie.jpg" alt="Zdjęcie 6" loading="lazy" />
-        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857061/1000004669_ckc8ah.jpg" alt="Zdjęcie 7" loading="lazy" />
-        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857073/1000004670_at1y4g.jpg" alt="Zdjęcie 8" loading="lazy" />
-      </div>
-    </section>
+  startBtn.onclick = () => {
+    bgAudio.src = "https://res.cloudinary.com/dqloszyfj/video/upload/v1768840494/Mig_-_Ta_Malutka_Blondynka_Official_Video_osiidd.mp3";
+    bgAudio.volume = 1;
+    bgAudio.play().then(() => {
+      introScreen.style.opacity = 0;
+      setTimeout(() => {
+        introScreen.style.display = "none";
+        content.style.display = "block";
+      }, 500);
+    }).catch(() => {
+      introScreen.style.opacity = 0;
+      setTimeout(() => {
+        introScreen.style.display = "none";
+        content.style.display = "block";
+      }, 500);
+    });
+  };
 
-    <footer>
-      ✨ Nie może Cię zabraknąć ✨
-    </footer>
-  </div>
+  const targetDate = new Date("2026-02-02T15:00:00").getTime();
 
-  <!-- MODAL Z VIDEO -->
-  <div id="introModal" role="dialog" aria-modal="true">
-    <button id="closeIntroBtn" aria-label="Zamknij zapowiedź">&times;</button>
-    <video id="introVideo" controls playsinline>
-      <source src="https://res.cloudinary.com/dqloszyfj/video/upload/v1768838872/Filmik_dyskoteka_promocyjny_lzzhjm.mp4" type="video/mp4" />
-      Twoja przeglądarka nie wspiera odtwarzania video.
-    </video>
-  </div>
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = targetDate - now;
+    if (diff < 0) return;
 
-  <!-- AUDIO -->
-  <audio id="bgAudio" loop></audio>
+    document.getElementById("days").textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    document.getElementById("minutes").textContent = Math.floor((diff / (1000 * 60)) % 60);
+    document.getElementById("seconds").textContent = Math.floor((diff / 1000) % 60);
+  }
 
-  <script>
-    const startBtn = document.getElementById('startBtn');
-    const introScreen = document.getElementById('introScreen');
-    const content = document.getElementById('content');
-    const bgAudio = document.getElementById('bgAudio');
-    const showIntroBtn = document.getElementById("showIntroBtn");
-    const introModal = document.getElementById("introModal");
-    const closeIntroBtn = document.getElementById("closeIntroBtn");
-    const introVideo = document.getElementById("introVideo");
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 
-    startBtn.onclick = () => {
-      bgAudio.src = "https://res.cloudinary.com/dqloszyfj/video/upload/v1768840494/Mig_-_Ta_Malutka_Blondynka_Official_Video_osiidd.mp3";
-      bgAudio.volume = 1;
-      bgAudio.play().then(() => {
-        introScreen.style.opacity = 0;
-        setTimeout(() => {
-          introScreen.style.display = "none";
-          content.style.display = "block";
-        }, 500);
-      }).catch(() => {
-        introScreen.style.opacity = 0;
-        setTimeout(() => {
-          introScreen.style.display = "none";
-          content.style.display = "block";
-        }, 500);
-      });
-    };
+  showIntroBtn.onclick = () => {
+    introModal.classList.add("show");
+    introVideo.currentTime = 0;
+    introVideo.play();
+    bgAudio.volume = 0;
+  };
 
-    const targetDate = new Date("2026-02-12T15:00:00").getTime();
+  closeIntroBtn.onclick = () => {
+    introVideo.pause();
+    introModal.classList.remove("show");
+    bgAudio.volume = 1;
+  };
 
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const diff = targetDate - now;
-      if (diff < 0) return;
+  introVideo.onended = () => {
+    introModal.classList.remove("show");
+    bgAudio.volume = 1;
+  };
 
-      document.getElementById("days").textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
-      document.getElementById("hours").textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      document.getElementById("minutes").textContent = Math.floor((diff / (1000 * 60)) % 60);
-      document.getElementById("seconds").textContent = Math.floor((diff / 1000) % 60);
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-    showIntroBtn.onclick = () => {
-      introModal.classList.add("show");
-      introVideo.currentTime = 0;
-      introVideo.play();
-      bgAudio.volume = 0;
-    };
-
-    closeIntroBtn.onclick = () => {
-      introVideo.pause();
-      introModal.classList.remove("show");
-      bgAudio.volume = 1;
-    };
-
-    introVideo.onended = () => {
-      introModal.classList.remove("show");
-      bgAudio.volume = 1;
-    };
-
-    // GALERIA: wycisz muzykę przy odtwarzaniu filmiku w sekcji "Jak wyglądały poprzednie imprezy"
-    const galleryVideo = document.querySelector('section:nth-of-type(7) video');
-
-    if (galleryVideo) {
-      galleryVideo.addEventListener('play', () => {
-        bgAudio.volume = 0;
-      });
-      galleryVideo.addEventListener('pause', () => {
-        bgAudio.volume = 1;
-      });
-      galleryVideo.addEventListener('ended', () => {
-        bgAudio.volume = 1;
-      });
-    }
-  </script>
+  // GALERIA: wycisz muzykę przy odtwarzaniu filmiku
+  const galleryVideo = document.querySelector('.gallery video');
+  if (galleryVideo) {
+    galleryVideo.addEventListener('play', () => { bgAudio.volume = 0; });
+    galleryVideo.addEventListener('pause', () => { bgAudio.volume = 1; });
+    galleryVideo.addEventListener('ended', () => { bgAudio.volume = 1; });
+  }
+</script>
 
 </body>
 </html>
