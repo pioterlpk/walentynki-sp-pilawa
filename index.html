@@ -2,29 +2,16 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dyskoteka Walentynkowa</title>
 
   <style>
-    /* RESET I BOX-SIZING */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow-x: hidden;
-      word-break: break-word;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
     body {
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #ff6a88;
       color: white;
+      overflow-x: hidden;
     }
 
     /* Ekran startowy */
@@ -303,7 +290,6 @@
     }
 
     /* RESPONSYWNOŚĆ */
-
     @media (max-width: 768px) {
       #content {
         margin: 60px 15px 30px 15px;
@@ -406,6 +392,7 @@
 </head>
 
 <body>
+
   <div id="introScreen">
     <button id="startBtn">
       <span class="heart-start">❤️</span>
@@ -464,11 +451,12 @@
     <section>
       <h2>Jak wyglądały poprzednie imprezy? 🎉🔈</h2>
       <div class="gallery">
-        <img src="PASTE_CLOUDINARY_LINK_1" loading="lazy" />
-        <img src="PASTE_CLOUDINARY_LINK_2" loading="lazy" />
-        <img src="PASTE_CLOUDINARY_LINK_3" loading="lazy" />
-        <video controls>
-          <source src="PASTE_CLOUDINARY_LINK_FILM" type="video/mp4" />
+        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857023/1000000229_w4c3hd.jpg" alt="Zdjęcie 1" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857043/1000000231_p5xaji.jpg" alt="Zdjęcie 2" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857050/1000004668_vixlie.jpg" alt="Zdjęcie 3" loading="lazy" />
+        <video controls preload="metadata" playsinline>
+          <source src="https://res.cloudinary.com/dqloszyfj/video/upload/v1768838872/Filmik_dyskoteka_promocyjny_lzzhjm.mp4" type="video/mp4" />
+          Twoja przeglądarka nie wspiera odtwarzania video.
         </video>
       </div>
     </section>
@@ -480,25 +468,24 @@
       <p>Poniżej znajdziecie kilka zdjęć, jak wygląda to zza kulis.</p>
 
       <div class="gallery">
-        <img src="PASTE_CLOUDINARY_LINK_4" loading="lazy" />
-        <img src="PASTE_CLOUDINARY_LINK_5" loading="lazy" />
-        <img src="PASTE_CLOUDINARY_LINK_6" loading="lazy" />
-        <img src="PASTE_CLOUDINARY_LINK_7" loading="lazy" />
-        <img src="PASTE_CLOUDINARY_LINK_8" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857033/1000000229_w4c3hd.jpg" alt="Zdjęcie 4" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857043/1000000231_p5xaji.jpg" alt="Zdjęcie 5" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857050/1000004668_vixlie.jpg" alt="Zdjęcie 6" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857061/1000004669_ckc8ah.jpg" alt="Zdjęcie 7" loading="lazy" />
+        <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857073/1000004670_at1y4g.jpg" alt="Zdjęcie 8" loading="lazy" />
       </div>
     </section>
 
-    <footer>✨ Nie może Cię zabraknąć ✨</footer>
+    <footer>
+      ✨ Nie może Cię zabraknąć ✨
+    </footer>
   </div>
 
   <!-- MODAL Z VIDEO -->
   <div id="introModal" role="dialog" aria-modal="true">
     <button id="closeIntroBtn" aria-label="Zamknij zapowiedź">&times;</button>
     <video id="introVideo" controls playsinline>
-      <source
-        src="https://res.cloudinary.com/dqloszyfj/video/upload/v1768838872/Filmik_dyskoteka_promocyjny_lzzhjm.mp4"
-        type="video/mp4"
-      />
+      <source src="https://res.cloudinary.com/dqloszyfj/video/upload/v1768838872/Filmik_dyskoteka_promocyjny_lzzhjm.mp4" type="video/mp4" />
       Twoja przeglądarka nie wspiera odtwarzania video.
     </video>
   </div>
@@ -511,24 +498,78 @@
     const introScreen = document.getElementById('introScreen');
     const content = document.getElementById('content');
     const bgAudio = document.getElementById('bgAudio');
-    const showIntroBtn = document.getElementById('showIntroBtn');
-    const introModal = document.getElementById('introModal');
-    const closeIntroBtn = document.getElementById('closeIntroBtn');
-    const introVideo = document.getElementById('introVideo');
+    const showIntroBtn = document.getElementById("showIntroBtn");
+    const introModal = document.getElementById("introModal");
+    const closeIntroBtn = document.getElementById("closeIntroBtn");
+    const introVideo = document.getElementById("introVideo");
 
     startBtn.onclick = () => {
-      bgAudio.src =
-        'https://res.cloudinary.com/dqloszyfj/video/upload/v1768840494/Mig_-_Ta_Malutka_Blondynka_Official_Video_osiidd.mp3';
+      bgAudio.src = "https://res.cloudinary.com/dqloszyfj/video/upload/v1768840494/Mig_-_Ta_Malutka_Blondynka_Official_Video_osiidd.mp3";
       bgAudio.volume = 1;
-      bgAudio
-        .play()
-        .then(() => {
-          introScreen.style.opacity = 0;
-          setTimeout(() => {
-            introScreen.style.display = 'none';
-            content.style.display = 'block';
-          }, 500);
-        })
-        .catch(() => {
-          introScreen.style.opacity = 0;
-         
+      bgAudio.play().then(() => {
+        introScreen.style.opacity = 0;
+        setTimeout(() => {
+          introScreen.style.display = "none";
+          content.style.display = "block";
+        }, 500);
+      }).catch(() => {
+        introScreen.style.opacity = 0;
+        setTimeout(() => {
+          introScreen.style.display = "none";
+          content.style.display = "block";
+        }, 500);
+      });
+    };
+
+    const targetDate = new Date("2026-02-12T15:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+      if (diff < 0) return;
+
+      document.getElementById("days").textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById("hours").textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      document.getElementById("minutes").textContent = Math.floor((diff / (1000 * 60)) % 60);
+      document.getElementById("seconds").textContent = Math.floor((diff / 1000) % 60);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    showIntroBtn.onclick = () => {
+      introModal.classList.add("show");
+      introVideo.currentTime = 0;
+      introVideo.play();
+      bgAudio.volume = 0;
+    };
+
+    closeIntroBtn.onclick = () => {
+      introVideo.pause();
+      introModal.classList.remove("show");
+      bgAudio.volume = 1;
+    };
+
+    introVideo.onended = () => {
+      introModal.classList.remove("show");
+      bgAudio.volume = 1;
+    };
+
+    // GALERIA: wycisz muzykę przy odtwarzaniu filmiku w sekcji "Jak wyglądały poprzednie imprezy"
+    const galleryVideo = document.querySelector('section:nth-of-type(7) video');
+
+    if (galleryVideo) {
+      galleryVideo.addEventListener('play', () => {
+        bgAudio.volume = 0;
+      });
+      galleryVideo.addEventListener('pause', () => {
+        bgAudio.volume = 1;
+      });
+      galleryVideo.addEventListener('ended', () => {
+        bgAudio.volume = 1;
+      });
+    }
+  </script>
+
+</body>
+</html>
