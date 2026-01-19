@@ -6,6 +6,10 @@
 <title>Dyskoteka Walentynkowa</title>
 
 <style>
+* {
+  box-sizing:border-box;
+}
+
 body {
   margin:0;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -14,14 +18,12 @@ body {
   overflow-x:hidden;
 }
 
-/* Intro */
+/* INTRO */
 #introScreen {
   height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
-  background:#ff6a88;
 }
 #startBtn {
   padding:25px 50px;
@@ -35,65 +37,63 @@ body {
   box-shadow:0 0 25px #ff0a5c;
 }
 
-/* Content */
+/* CONTENT */
 #content {
   display:none;
   max-width:1100px;
-  margin:80px auto;
-  padding:0 20px;
+  margin:60px auto;
+  padding:0 16px;
   text-align:center;
 }
 
 section {
   background:rgba(255,255,255,0.12);
-  padding:40px 30px;
+  padding:32px 24px;
   border-radius:25px;
-  margin-bottom:40px;
+  margin-bottom:32px;
   text-align:left;
 }
 
-h1 { font-size:4rem; text-align:center; }
-h2 { font-size:2.3rem; margin-bottom:20px; }
+h1 { font-size:3rem; text-align:center; }
+h2 { font-size:2rem; margin-bottom:16px; }
 p {
-  font-size:1.3rem;
+  font-size:1.2rem;
   line-height:1.6;
-  margin-bottom:15px;
 }
 
 .date {
   display:inline-block;
-  margin-top:20px;
-  padding:14px 30px;
+  margin-top:16px;
+  padding:12px 26px;
   background:rgba(0,0,0,0.3);
   border-radius:30px;
-  font-size:1.8rem;
+  font-size:1.6rem;
 }
 
+/* GALERIA – GRID (BRAK SCROLLA) */
 .gallery {
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-  justify-content:center;
-  margin-top:25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+  gap:14px;
+  margin-top:20px;
 }
 
 .gallery img,
 .gallery video {
-  width:30%;
-  border-radius:15px;
+  width:100%;
+  border-radius:14px;
   object-fit:cover;
   cursor:pointer;
-  box-shadow:0 0 25px rgba(255,10,92,0.7);
+  box-shadow:0 0 20px rgba(255,10,92,0.7);
   transition:0.3s;
 }
 
 .gallery img:hover,
 .gallery video:hover {
-  transform:scale(1.05);
-  box-shadow:0 0 35px rgba(255,10,92,1);
+  transform:scale(1.04);
 }
 
-/* Lightbox */
+/* LIGHTBOX */
 #lightbox {
   position:fixed;
   inset:0;
@@ -108,10 +108,6 @@ p {
   max-height:90vh;
   border-radius:15px;
   box-shadow:0 0 30px #ff004c;
-}
-
-@media(max-width:768px){
-  .gallery img, .gallery video { width:100%; }
 }
 </style>
 </head>
@@ -139,17 +135,13 @@ p {
 <p>Najlepsze hity, romantyczna atmosfera, konkursy i parkiet pełen energii.</p>
 </section>
 
-<!-- 🔴 BACKSTAGE -->
 <section>
 <h2>Jak wygląda organizacja od backstage'u? 🎬</h2>
-
-<!-- ⬇⬇⬇ TUTAJ WPISZ SWÓJ TEKST BACKSTAGE ⬇⬇⬇ -->
 <p>
-Organizacja wszelkich imprez szkolynch, m. in. właśnie dyskotek od zawsze była dla nas wielką przyjemnością.
-Organizujemy je dla was z wielką przyjemnością, wkładamy w to wielką ilość pracy i czasu, a to wszystko dla was.
-Jeśli interesuje was jak to wygląda zza kulis, poniżej znajdziecie kilka zdjęć z przygotowań takich imprez.
+Organizacja imprez to dla nas ogromna przyjemność.
+Wkładamy w to dużo pracy i serca – wszystko po to,
+aby każda dyskoteka była wyjątkowa.
 </p>
-<!-- ⬆⬆⬆ KONIEC MIEJSCA DO EDYCJI TEKSTU ⬆⬆⬆ -->
 
 <div class="gallery">
   <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768857033/1000000229_w4c3hd.jpg">
@@ -160,26 +152,30 @@ Jeśli interesuje was jak to wygląda zza kulis, poniżej znajdziecie kilka zdj�
 </div>
 </section>
 
-<!-- 🔴 POPRZEDNIE IMPREZY -->
 <section>
-<h2>Jak wyglądały poprzednie imprezy organizowane przez nas? 🎉</h2>
+<h2>Jak wyglądały poprzednie imprezy? 🎉</h2>
 
 <div class="gallery">
   <img src="https://res.cloudinary.com/your_cloud_name/image/upload/v1/past1.jpg">
   <img src="https://res.cloudinary.com/your_cloud_name/image/upload/v1/past2.jpg">
   <img src="https://res.cloudinary.com/your_cloud_name/image/upload/v1/past3.jpg">
 
-  <video controls>
-    <source src="https://player.cloudinary.com/embed/?cloud_name=dqloszyfj&public_id=1000002708_h7much" type="video/mp4">
+  <video controls playsinline>
+    <source src="https://res.cloudinary.com/dqloszyfj/video/upload/v1768850000/1000002708_h7much.mp4" type="video/mp4">
   </video>
 </div>
 </section>
 
-<footer style="text-align:center;font-size:1.3rem;opacity:0.9;">
+<footer style="text-align:center;font-size:1.2rem;opacity:0.9;">
 ✨ Nie może Cię zabraknąć ✨
 </footer>
 
 </div>
+
+<!-- MUZYKA -->
+<audio id="bgMusic" loop playsinline>
+  <source src="https://res.cloudinary.com/dqloszyfj/video/upload/v1768840494/Mig_-_Ta_Malutka_Blondynka_Official_Video_osiidd.mp3" type="audio/mpeg">
+</audio>
 
 <div id="lightbox">
   <img id="lightboxImg">
@@ -189,10 +185,13 @@ Jeśli interesuje was jak to wygląda zza kulis, poniżej znajdziecie kilka zdj�
 const startBtn = document.getElementById("startBtn");
 const content = document.getElementById("content");
 const intro = document.getElementById("introScreen");
+const music = document.getElementById("bgMusic");
 
 startBtn.onclick = () => {
   intro.style.display="none";
   content.style.display="block";
+  music.volume = 1;
+  music.play();
 };
 
 const lightbox = document.getElementById("lightbox");
@@ -209,4 +208,3 @@ lightbox.onclick=()=>lightbox.style.display="none";
 
 </body>
 </html>
-
