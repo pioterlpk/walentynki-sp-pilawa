@@ -174,7 +174,6 @@ const seconds=document.getElementById("seconds");
 startBtn.onclick=()=>{
   introScreen.style.display="none";
   content.style.display="block";
-  // AUDIO startuje po kliknięciu użytkownika -> działa na telefonach
   bgAudio.volume=1;
   bgAudio.play().catch(()=>{});
 };
@@ -216,4 +215,3 @@ document.querySelectorAll(".gallery video").forEach(v=>{
 </script>
 </body>
 </html>
-
