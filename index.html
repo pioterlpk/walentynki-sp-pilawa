@@ -7,6 +7,15 @@
 
 <style>
 body{margin:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#ff6a88;color:white;overflow-x:hidden;}
+/* EKRAN POWITALNY */
+#passwordScreen{height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding:20px;}
+#passwordScreen h1{font-size:clamp(2.5rem,7vw,4.5rem);margin:0;}
+#passwordScreen h3{font-size:1.5rem;margin:15px 0;}
+#passwordInput{padding:12px 20px;font-size:1.2rem;border-radius:10px;border:none;margin-bottom:20px;}
+#passwordBtn{padding:12px 25px;font-size:1.2rem;border-radius:15px;border:none;background:#ff0a5c;color:white;cursor:pointer;box-shadow:0 0 15px #ff0a5c;}
+#passwordError{color:#ff0a5c;margin-top:10px;font-weight:bold;display:none;}
+
+/* RESZTA TWOJEGO CSS */
 #introScreen{height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;padding:0 20px;text-align:center;}
 #startBtn{padding:25px 50px;font-size:2rem;font-weight:bold;background:#ff0a5c;border:none;border-radius:50px;color:white;cursor:pointer;box-shadow:0 0 25px #ff0a5c;display:flex;align-items:center;gap:10px;white-space:normal;word-break:break-word;}
 .heart-start{animation:pulse 1.5s infinite;}
@@ -49,8 +58,8 @@ footer{text-align:center;opacity:0.85;font-size:1.3rem;margin-bottom:40px;}
   .gallery img,.gallery video{height:180px;}
 }
 @media(max-width:480px){
-  #introScreen{padding:0 15px;}
-  #startBtn{padding:18px 25px;font-size:1.4rem;gap:6px;}
+  #passwordScreen h1{font-size:2.5rem;}
+  #passwordScreen h3{font-size:1.2rem;}
   #content{margin:50px 10px 20px;padding:0 10px;}
   h1{font-size:2.8rem;letter-spacing:2px;}
   .date{font-size:1.2rem;padding:10px 18px;}
@@ -67,6 +76,17 @@ footer{text-align:center;opacity:0.85;font-size:1.3rem;margin-bottom:40px;}
 
 <body>
 
+<!-- EKRAN HASŁA -->
+<div id="passwordScreen">
+  <h1>DYSKOTEKA WALENTYNKOWA</h1>
+  <h3>LUTY 2026</h3>
+  <p>Wpisz hasło aby przejść na stronę:</p>
+  <input type="password" id="passwordInput" placeholder="Hasło" />
+  <button id="passwordBtn">WEJDŹ</button>
+  <div id="passwordError">Niepoprawne hasło!</div>
+</div>
+
+<!-- TWOJA STRONA -->
 <div id="introScreen">
   <button id="startBtn">
     <span class="heart-start">❤️</span> WIĘCEJ INFORMACJI O DYSKOTECE <span class="heart-start">❤️</span>
@@ -74,7 +94,6 @@ footer{text-align:center;opacity:0.85;font-size:1.3rem;margin-bottom:40px;}
 </div>
 
 <div id="content">
-
 <header>
   <h1>DYSKOTEKA WALENTYNKOWA</h1>
   <div class="heart">❤️</div>
@@ -121,10 +140,7 @@ footer{text-align:center;opacity:0.85;font-size:1.3rem;margin-bottom:40px;}
 <div class="gallery">
   <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768865895/1000002621_murjtx.jpg">
   <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768865983/1000002609_zsyqm6.jpg">
-  <img src="https://res.cloudinary.com/dqloszyfj/image/upload/v1768899396/1000004682_pmtsbm.jpg">
-  <video controls>
-    <source src="https://res.cloudinary.com/dqloszyfj/video/upload/v1768857800/1000002708_h7much.mp4" type="video/mp4">
-  </video>
+  <img src="https://res.cloudinary.com/dqloszyfj/video/upload/v1768857800/1000002708_h7much.mp4" type="video/mp4">
 </div>
 </section>
 
@@ -156,6 +172,22 @@ footer{text-align:center;opacity:0.85;font-size:1.3rem;margin-bottom:40px;}
 </audio>
 
 <script>
+const passwordScreen=document.getElementById("passwordScreen");
+const passwordInput=document.getElementById("passwordInput");
+const passwordBtn=document.getElementById("passwordBtn");
+const passwordError=document.getElementById("passwordError");
+const correctPassword="GrupaOperacyjnoNaglosnieniowa";
+
+passwordBtn.onclick=()=>{
+  if(passwordInput.value===correctPassword){
+    passwordScreen.style.display="none";
+    document.getElementById("introScreen").style.display="flex";
+  } else {
+    passwordError.style.display="block";
+  }
+};
+
+/* RESZTA TWOJEGO JS */
 const startBtn=document.getElementById("startBtn");
 const introScreen=document.getElementById("introScreen");
 const content=document.getElementById("content");
